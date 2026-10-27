@@ -90,7 +90,7 @@ section{padding:72px 16px;max-width:920px;margin:auto;text-align:center;position
 <script type="text/babel">
 const {useState,useEffect,useRef}=React;
 /* ===== EDIT ME ===== name: signature · music: path/URL to an audio file · photos: permanent image paths for the 6 slots */
-const CFG={name:"",music:"",photos:{shot1:"",shot2:"",day:"",sep14:"",garba1:"",garba2:""}};
+const CFG={name:"",music:"",photos:{shot1:"",shot2:"",day:"aug%2015.png",sep14:"sept%2014.png",garba1:"garba%201.jpg",garba2:"garba%202.jpg"}};
 const ls=(k,d)=>{try{const v=JSON.parse(localStorage.getItem("ar_"+k));return v==null?d:v}catch{return d}};
 const sv=(k,v)=>{try{localStorage.setItem("ar_"+k,JSON.stringify(v))}catch{}};
 const idbGet=async k=>{try{const d=await new Promise((r,j)=>{const q=indexedDB.open("ar",1);q.onupgradeneeded=()=>q.result.createObjectStore("p");q.onsuccess=()=>r(q.result);q.onerror=j});return await new Promise(r=>{const q=d.transaction("p").objectStore("p").get(k);q.onsuccess=()=>r(q.result);q.onerror=()=>r()})}catch{}};
